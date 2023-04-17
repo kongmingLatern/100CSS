@@ -1,0 +1,102 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: #fff;
+	color: #fff;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slices {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: url('https://img0.baidu.com/it/u=2961442858,2103223125&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500')
+		center center no-repeat;
+	background-size: 400px 400px;
+	cursor: pointer;
+
+	&:hover {
+		h1 {
+			transform: translateX(-40px);
+		}
+		h2 {
+			transform: translateX(40px);
+		}
+		.slice {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.slice {
+		position: relative;
+		z-index: 2;
+		float: left;
+		box-sizing: border-box;
+		width: 50px;
+		height: 400px;
+		background: url('https://img0.baidu.com/it/u=3070487557,2838123966&fm=253&fmt=auto&app=138&f=JPEG?w=627&h=500')
+			center center no-repeat;
+		background-size: 400px 400px;
+		transition: all 1s ease-in-out;
+	}
+	@for $i from 1 through 8 {
+		$nullBase: $i - 1;
+		.slice-#{$i} {
+			background-position: ($nullBase * -50) + px 0;
+			transform: translateY(-40px);
+			opacity: 0;
+		}
+	}
+
+	@for $i from 1 through 4 {
+		.slice-#{$i * 2} {
+			transform: translateY(40px);
+		}
+	}
+}
+
+.text {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 145px;
+}
+
+h1 {
+	font-size: 60px;
+	line-height: 60px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin: 0;
+	transition: all 1s ease-in-out;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+	@extend h1;
+	font-size: 40px;
+	line-height: 40px;
+}
