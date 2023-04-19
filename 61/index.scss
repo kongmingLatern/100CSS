@@ -5,6 +5,7 @@ $colorAA: #267aac;
 $colorB: #4ad7b8;
 $colorBB: #f39c12;
 
+// 相当于定义了一个函数
 @mixin gradient($color1, $color2) {
 	background: $color1;
 	background: -moz-linear-gradient(
@@ -22,6 +23,16 @@ $colorBB: #f39c12;
 		$color1 0%,
 		$color2 100%
 	);
+	// NOTE:NEW 语法
+	// filter:progid:DXImageTransform.Microsoft.Gradient(enabled=bEnabled,startColorStr=iWidth,endColorStr=iWidth)
+	// 作用：用于在元素上创建渐变效果
+	// 1.startColorstr：渐变的起始颜色。
+	// 2.endColorstr：渐变的结束颜色。
+	// 3.GradientType：渐变的方向。可以0用于垂直、1水平或2对角线。
+	// 适配情况
+	// IE6 及其更高版本的浏览器
+	// 请注意，progid:DXImageTransform.Microsoft.gradient过滤器已弃用，取而代之的是 CSS3 渐变。所有主流浏览器都支持 CSS3 渐变。
+	// 网址: https://blog.csdn.net/jiudihanbing/article/details/8372947
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color1}', endColorstr='#{$color2}',GradientType=1 );
 }
 

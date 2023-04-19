@@ -69,7 +69,7 @@ $offset: calc(400 / $numberOfTriggers);
 	.trigger-#{$i} {
 		top: (($i - 1) * $offset) + px;
 		// Core
-		// 这里是重点，当鼠标经过的时候，会计算当前鼠标位置的元素的高度，然后将其高度赋值给plane的高度
+		// NOTE:这里是重点，当鼠标经过的时候，会计算当前鼠标位置的元素的高度，然后将其高度赋值给plane的高度
 		&:hover ~ .plane {
 			// $scaleY: ( (1 / $numberOfTriggers) * $i);
 			height: ($i * $offset) + px;
