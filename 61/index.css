@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div[class^=gradient] {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 0;
+}
+
+.gradient-1 {
+  background: #77c8c0;
+  background: -moz-linear-gradient(-45deg, #77c8c0 0%, #267aac 100%);
+  background: -webkit-linear-gradient(-45deg, #77c8c0 0%, #267aac 100%);
+  background: linear-gradient(135deg, #77c8c0 0%, #267aac 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#77c8c0", endColorstr="#267aac",GradientType=1 );
+}
+
+.gradient-2 {
+  z-index: 2;
+  opacity: 0;
+  background: #4ad7b8;
+  background: -moz-linear-gradient(-45deg, #4ad7b8 0%, #f39c12 100%);
+  background: -webkit-linear-gradient(-45deg, #4ad7b8 0%, #f39c12 100%);
+  background: linear-gradient(135deg, #4ad7b8 0%, #f39c12 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#4ad7b8", endColorstr="#f39c12",GradientType=1 );
+  animation: gradient 4s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
